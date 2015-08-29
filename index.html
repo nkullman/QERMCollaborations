@@ -29,7 +29,7 @@ var force = d3.layout.force()
     .charge(-100)
     .size([width, height]);
 
-d3.json("graph.json", function(error, json) {
+d3.json("qermConns.json", function(error, json) {
   if (error) throw error;
 
   force
@@ -49,7 +49,7 @@ d3.json("graph.json", function(error, json) {
       .call(force.drag);
 
   node.append("image")
-      .attr("xlink:href", "https://github.com/favicon.ico")
+      .attr("xlink:href", "https://upload.wikimedia.org/wikipedia/commons/9/99/University_of_Washington_Block_W_logo.svg")
       .attr("x", -8)
       .attr("y", -8)
       .attr("width", 16)
