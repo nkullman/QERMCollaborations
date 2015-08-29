@@ -31,7 +31,9 @@ d3.json("qermConns.json", function(error, json) {
       .call(force.drag);
 
   node.append("image")
-      .attr("xlink:href", "https://upload.wikimedia.org/wikipedia/commons/9/99/University_of_Washington_Block_W_logo.svg")
+      .attr("xlink:href", function(d,i){
+        // if statement to check lab, institutition, etc.
+        return "https://upload.wikimedia.org/wikipedia/commons/9/99/University_of_Washington_Block_W_logo.svg";})
       .attr("x", -8)
       .attr("y", -8)
       .attr("width", 16)
@@ -41,6 +43,7 @@ d3.json("qermConns.json", function(error, json) {
       .attr("dx", 12)
       .attr("dy", ".35em")
       .text(function(d) { return d.name });
+  //node.on("hover", function(d,i) {...} )
 
   force.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
