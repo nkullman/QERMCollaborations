@@ -237,15 +237,15 @@
     filterNodes = function(allNodes) {
       var cutoff, filteredNodes, playcounts;
       filteredNodes = allNodes;
-      if (filter === "popular" || filter === "obscure") {
+      if (filter === "currStudents" || filter === "alumni") {
         playcounts = allNodes.map(function(d) {
           return d.playcount;
         }).sort(d3.ascending);
         cutoff = d3.quantile(playcounts, 0.5);
         filteredNodes = allNodes.filter(function(n) {
-          if (filter === "popular") {
+          if (filter === "currStudents") {
             return n.playcount > cutoff;
-          } else if (filter === "obscure") {
+          } else if (filter === "alumni") {
             return n.playcount <= cutoff;
           }
         });
