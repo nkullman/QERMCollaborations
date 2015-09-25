@@ -108,7 +108,7 @@
     linksG = null;
     node = null;
     link = null;
-    layout = "force";
+    layout = "radial";
     filter = "all";
     sort = "songs";
     groupCenters = null;
@@ -125,7 +125,7 @@
       linksG = vis.append("g").attr("id", "links");
       nodesG = vis.append("g").attr("id", "nodes");
       force.size([width, height]);
-      setLayout("force");
+      setLayout("radial");
       setFilter("all");
       return update();
     };
@@ -475,7 +475,7 @@
       activate("sorts", newSort);
       return myNetwork.toggleSort(newSort);
     });
-    $("#song_select").on("change", function(e) {
+    $("#view_select").on("change", function(e) {
       var songFile;
       songFile = $(this).val();
       return d3.json("data/" + songFile, function(json) {
