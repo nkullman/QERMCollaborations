@@ -194,13 +194,7 @@
       return update();
     };
     setupData = function(data) {
-      var circleRadius, countExtent, nodesMap;
-      /*countExtent = d3.extent(data.nodes, function(d) {
-        return d.playcount;
-      });*/
-      // All node circles now equal
-      // countExtent = [1,1];
-      // circleRadius = d3.scale.sqrt().range([3, 12]).domain(countExtent);
+      var circleRadius, nodesMap;
       circleRadius = 3;
       data.nodes.forEach(function(n) {
         var randomnumber;
@@ -208,7 +202,6 @@
         n.y = randomnumber = Math.floor(Math.random() * height);
         n.radius = circleRadius;
         return;
-        //return n.radius = circleRadius(n.playcount);
       });
       nodesMap = mapNodes(data.nodes);
       data.links.forEach(function(l) {
