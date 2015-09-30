@@ -16,6 +16,9 @@
     start = -120;
     current = start;
     radialLocation = function(center, angle, radius) {
+      // if QERMStudent then radius = 0;
+      // else radius = some outer radius value
+      // angle for outer radius elements dependent on number of nodes in set
       var x, y;
       x = center.x + radius * Math.cos(angle * Math.PI / 180);
       y = center.y + radius * Math.sin(angle * Math.PI / 180);
@@ -186,7 +189,7 @@
     };
     network.updateData = function(newData) {
       allData = setupData(newData);
-      link.remove();
+      if (link !== null){link.remove();}
       node.remove();
       return update();
     };
@@ -195,19 +198,24 @@
       /*countExtent = d3.extent(data.nodes, function(d) {
         return d.playcount;
       });*/
-      countExtent = [1,1];
-      circleRadius = d3.scale.sqrt().range([3, 12]).domain(countExtent);
+      // All node circles now equal
+      // countExtent = [1,1];
+      // circleRadius = d3.scale.sqrt().range([3, 12]).domain(countExtent);
+      circleRadius = 3;
       data.nodes.forEach(function(n) {
         var randomnumber;
         n.x = randomnumber = Math.floor(Math.random() * width);
         n.y = randomnumber = Math.floor(Math.random() * height);
-        return n.radius = circleRadius(n.playcount);
+        n.radius = circleRadius;
+        return;
+        //return n.radius = circleRadius(n.playcount);
       });
       nodesMap = mapNodes(data.nodes);
       data.links.forEach(function(l) {
         l.source = nodesMap.get(l.source);
         l.target = nodesMap.get(l.target);
-        return linkedByIndex[l.source.id + "," + l.target.id] = 1;
+        linkedByIndex[l.source.id + "," + l.target.id] = 1;
+        return; 
       });
       return data;
     };
@@ -487,7 +495,7 @@
       searchTerm = $(this).val();
       return myNetwork.updateSearch(searchTerm);
     });
-    return d3.json("data/call_me_al.json", function(json) {
+    return d3.json("data/organizations.json", function(json) {
       return myNetwork("#vis", json);
     });
   });
