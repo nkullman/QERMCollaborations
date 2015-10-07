@@ -5,84 +5,128 @@
       "name": "Cole",
       "artist": "Q-SAFS",
       "id": "cole_qerm_node",
-      "playcount": 678276
+	"status": "student",
+	"playcount": 678276
+    },
+    {
+      "QERMStudent": true,
+      "name": "Melissa",
+      "artist": "Q-SAFS",
+      "id": "melissa_qerm_node",
+	"status": "alumni",
+	"playcount": 678276
+    },
+    {
+      "QERMStudent": true,
+      "name": "Kelsey",
+      "artist": "Q-SAFS",
+      "id": "kelsey_qerm_node",
+	"status": "alumni",
+	"playcount": 678276
     },
     {
       "QERMStudent": true,
       "name": "Scott",
       "artist": "Q-SEFS",
       "id": "scott_qerm_node",
-      "playcount": 678276
+	"status": "student",
+	"playcount": 678276
     },
     {
       "QERMStudent": true,
       "name": "Kiva",
       "artist": "Q-SAFS",
       "id": "kiva_qerm_node",
-      "playcount": 678276
+	"status": "student",
+	"playcount": 678276
     },
     {
       "QERMStudent": true,
       "name": "Austin",
       "artist": "Q-SEFS",
       "id": "austin_qerm_node",
-      "playcount": 829602
+	"status": "student",
+	"playcount": 829602
     },
     {
       "QERMStudent": true,
       "name": "Nick",
       "artist": "Q-SEFS",
       "id": "nick_qerm_node",
-      "playcount": 1764606
+	"status": "student",
+	"playcount": 1764606
     },
     {
       "QERMStudent": false,
       "name": "National Oceanagraphic and Atmospheric Administration",
       "artist": "NOAA",
       "id": "noaa_org_node",
-      "playcount": 1630451
+	"status": "student",
+	"playcount": 1630451
     },
     {
       "QERMStudent": false,
       "name": "US Forest Service",
       "artist": "USFS",
       "id": "usfs_org_node",
-      "playcount": 480881
+	"status": "NA",
+	"playcount": 480881
     },
     {
       "QERMStudent": false,
       "name": "US Department of Agriculture",
       "artist": "USDA",
       "id": "usda_org_node",
-      "playcount": 480881
+	"status": "NA",
+	"playcount": 480881
     },
     {
       "QERMStudent": false,
       "name": "Fred Hutchison Cancer Research Center",
       "artist": "FHCRC",
       "id": "fhcrc_org_node",
-      "playcount": 480881
+	"status": "NA",
+	"playcount": 480881
     },
     {
       "QERMStudent": false,
       "name": "International Pacific Halibut Commission",
       "artist": "IPHC",
       "id": "iphc_org_node",
-      "playcount": 480881
+	"status": "NA",
+	"playcount": 480881
     },
     {
       "QERMStudent": false,
       "name": "Northwest Climiate Science Center",
       "artist": "NWCSC",
       "id": "nwcsc_org_node",
-      "playcount": 480881
+	"status": "NA",
+	"playcount": 480881
+    },
+    {
+      "QERMStudent": false,
+      "name": "Alaska Department of Fish and Game",
+      "artist": "ADFG",
+      "id": "adfg_org_node",
+	"status": "NA",
+	"playcount": 480881
+    },
+    {
+      "QERMStudent": false,
+      "name": "Bonneville Power Administration",
+      "artist": "Bonneville",
+      "id": "bpa_org_node",
+	"status": "NA",
+	"playcount": 480881
     },
     {
       "QERMStudent": false,
       "name": "UW Applied Physics Lab",
       "artist": "APL",
       "id": "uwapl_org_node",
-      "playcount": 480881
+	"status": "NA",
+	"playcount": 480881
     }
   ],
   "links": [
@@ -111,12 +155,28 @@
       "target": "usda_org_node"
     },
     {
+      "source": "kelsey_qerm_node",
+      "target": "bpa_org_node"
+    },
+    {
+      "source": "kelsey_qerm_node",
+      "target": "sefs_org_node"
+    },
+    {
+      "source": "kelsey_qerm_node",
+      "target": "safs_org_node"
+    },
+    {
       "source": "kiva_qerm_node",
       "target": "usfs_org_node"
     },
     {
       "source": "kiva_qerm_node",
       "target": "noaa_org_node"
+    },
+    {
+      "source": "melissa_qerm_node",
+      "target": "adfg_org_node"
     },
     {
       "source": "scott_qerm_node",
