@@ -45,16 +45,21 @@
     setKeys = function(keys) {
       var firstCircleCount, firstCircleKeys, secondCircleKeys;
       values = d3.map();
-      firstCircleCount = 360 / increment;
-      if (keys.length < firstCircleCount) {
-        increment = 360 / keys.length;
+      radius = 40;
+      firstCircleKeys = [];
+      for (var key in keys) {
+        if (keys[key].startsWith("Q-")){
+          firstCircleKeys.push(keys[key]);
+        }
       }
-      firstCircleKeys = keys.slice(0, firstCircleCount);
+      console.log(firstCircleKeys);
+      increment = 360/firstCircleKeys.length
       firstCircleKeys.forEach(function(k) {
         return place(k);
       });
+      firstCircleCount = firstCircleKeys.length;
       secondCircleKeys = keys.slice(firstCircleCount);
-      radius = radius + radius / 1.8;
+      radius = 300;
       increment = 360 / secondCircleKeys.length;
       return secondCircleKeys.forEach(function(k) {
         return place(k);
