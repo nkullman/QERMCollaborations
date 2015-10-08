@@ -117,8 +117,8 @@
       "name": "Bonneville Power Administration",
       "artist": "Bonneville",
       "id": "bpa_org_node",
-	"status": "NA",
-	"playcount": 480881
+	    "status": "NA",
+	    "playcount": 480881
     },
     {
       "QERMStudent": false,
@@ -157,14 +157,6 @@
     {
       "source": "kelsey_qerm_node",
       "target": "bpa_org_node"
-    },
-    {
-      "source": "kelsey_qerm_node",
-      "target": "sefs_org_node"
-    },
-    {
-      "source": "kelsey_qerm_node",
-      "target": "safs_org_node"
     },
     {
       "source": "kiva_qerm_node",
