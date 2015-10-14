@@ -106,8 +106,8 @@
 
   Network = function() {
     var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedArtists, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
-    width = 960;
-    height = 800;
+    width = 720;
+    height = 600;
     allData = [];
     curLinksData = [];
     curNodesData = [];
@@ -244,15 +244,12 @@
       var cutoff, filteredNodes, playcounts;
       filteredNodes = allNodes;
       if (filter === "currStudents" || filter === "alumni") {
-        playcounts = allNodes.map(function(d) {
-          return d.playcount;
-        }).sort(d3.ascending);
-        cutoff = d3.quantile(playcounts, 0.5);
+        
         filteredNodes = allNodes.filter(function(n) {
           if (filter === "currStudents") {
-            return n.playcount > cutoff;
+            return n.status !== "alumni";
           } else if (filter === "alumni") {
-            return n.playcount <= cutoff;
+            return n.status !== "student";
           }
         });
       }
