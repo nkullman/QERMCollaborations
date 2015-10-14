@@ -398,7 +398,11 @@
       var content;
       content = '<p class="main">' + d.name + '</span></p>';
       content += '<hr class="tooltip-hr">';
-      content += '<p class="main">' + d.artist + '</span></p>';
+     if (d.QERMStudent === false){
+       content += '<p class="main">' + d.artist + '</span></p>';
+     } else{
+        content += '<p class="main">' + d.artist.substring(2) + '</span></p>';
+     }
       tooltip.showTooltip(content, d3.event);
       if (link) {
         link.attr("stroke", function(l) {
