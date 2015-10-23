@@ -1,2 +1,2 @@
- - [ ] When filtering on current/alumni, eliminate nodes/links unconnected to the filtered nodes
+ - [x] When filtering on current/alumni, eliminate nodes/links unconnected to the filtered nodes
  - [ ] Enable functionality on "Sort" toggle to lump students into one "QERM" pool instead of pooling by advisor dept

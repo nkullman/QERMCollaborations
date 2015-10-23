@@ -104,7 +104,7 @@
   };
 
   Network = function() {
-    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedArtists, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
+    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedArtists, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
     width = 720;
     height = 600;
     allData = [];
@@ -140,6 +140,8 @@
       var artists;
       curNodesData = filterNodes(allData.nodes);
       curLinksData = filterLinks(allData.links, curNodesData);
+      // remove residual organization nodes not attached to any students
+      curNodesData = filterUnconnectedNodes(curNodesData, curLinksData);
       if (layout === "radial") {
         artists = sortedArtists(curNodesData, curLinksData);
         updateCenters(artists);
@@ -240,7 +242,7 @@
       return linkedByIndex[a.id + "," + b.id] || linkedByIndex[b.id + "," + a.id];
     };
     filterNodes = function(allNodes) {
-      var cutoff, filteredNodes, playcounts;
+      var filteredNodes;
       filteredNodes = allNodes;
       if (filter === "currStudents" || filter === "alumni") {
         
@@ -254,6 +256,34 @@
       }
       return filteredNodes;
     };
+    filterStudentNodes = function(allNodes) {
+      var filteredNodes;
+      filteredNodes = allNodes;
+      filteredNodes = allNodes.filter(function(n) {
+        if (filter === "currStudents"){
+          return n.QERMStudent && n.status === "student";
+        } else if (filter === "alumni"){
+          return n.QERMStudent && n.status === "alumni";
+        } else {
+          return n.QERMStudent;
+        }
+      });
+      return filteredNodes;
+    };
+    filterUnconnectedNodes = function(curNodesData, curLinksData) {
+      var filteredNodes = [];
+      for (var ni = 0; ni < curNodesData.length; ni++){
+        var curnode = curNodesData[ni];
+        for (var linkIdx in curLinksData){
+          var link = curLinksData[linkIdx];
+          if (link.source.id === curnode.id || link.target.id === curnode.id){
+            filteredNodes.push(curnode);
+            break;
+          }
+        }
+      };
+      return filteredNodes;
+    }
     sortedArtists = function(nodes, links) {
       var artists, counts;
       artists = [];
