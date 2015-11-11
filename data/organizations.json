@@ -1,8 +1,7 @@
 {
   "nodes": [
-    // paste student nodes here from data/qermies.json
-	
-	// end of student nodes
+  !!! paste student nodes here from data/qermies.json !!!
+
     {
       "QERMStudent": false,
       "name": "National Oceanagraphic and Atmospheric Administration",

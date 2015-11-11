@@ -1,8 +1,8 @@
 {
   "nodes": [
-    // paste student nodes here from data/qermies.json
+  !!! paste student nodes here from data/qermies.json !!!
 
-	// end of student nodes
+
     {
       "status": "NA",
       "QERMStudent": false,
