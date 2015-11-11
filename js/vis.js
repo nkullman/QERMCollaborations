@@ -45,16 +45,20 @@
     setKeys = function(keys) {
       var firstCircleCount, firstCircleKeys, secondCircleKeys;
       values = d3.map();
-      firstCircleCount = 360 / increment;
-      if (keys.length < firstCircleCount) {
-        increment = 360 / keys.length;
+      radius = 40;
+      firstCircleKeys = [];
+      for (var key in keys) {
+        if (keys[key].startsWith("Q-")){
+          firstCircleKeys.push(keys[key]);
+        }
       }
-      firstCircleKeys = keys.slice(0, firstCircleCount);
+      increment = 360/firstCircleKeys.length
       firstCircleKeys.forEach(function(k) {
         return place(k);
       });
+      firstCircleCount = firstCircleKeys.length;
       secondCircleKeys = keys.slice(firstCircleCount);
-      radius = radius + radius / 1.8;
+      radius = 300;
       increment = 360 / secondCircleKeys.length;
       return secondCircleKeys.forEach(function(k) {
         return place(k);
@@ -100,9 +104,9 @@
   };
 
   Network = function() {
-    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedArtists, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
-    width = 960;
-    height = 800;
+    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedArtists, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
+    width = 720;
+    height = 600;
     allData = [];
     curLinksData = [];
     curNodesData = [];
@@ -136,6 +140,8 @@
       var artists;
       curNodesData = filterNodes(allData.nodes);
       curLinksData = filterLinks(allData.links, curNodesData);
+      // remove residual organization nodes not attached to any students
+      curNodesData = filterUnconnectedNodes(curNodesData, curLinksData);
       if (layout === "radial") {
         artists = sortedArtists(curNodesData, curLinksData);
         updateCenters(artists);
@@ -177,13 +183,13 @@
         element = d3.select(this);
         match = d.name.toLowerCase().search(searchRegEx);
         if (searchTerm.length > 0 && match >= 0) {
-          element.style("fill", "#F38630").style("stroke-width", 2.0).style("stroke", "#555");
+          element.style("fill", "#F38630").style("stroke-width", 2.0).style("stroke", "#555").attr("r", 3*1.5);
           return d.searched = true;
         } else {
           d.searched = false;
           return element.style("fill", function(d) {
             return nodeColors(d.artist);
-          }).style("stroke-width", 1.0);
+          }).style("stroke-width", 1.0).attr("r", 3);
         }
       });
     };
@@ -236,23 +242,48 @@
       return linkedByIndex[a.id + "," + b.id] || linkedByIndex[b.id + "," + a.id];
     };
     filterNodes = function(allNodes) {
-      var cutoff, filteredNodes, playcounts;
+      var filteredNodes;
       filteredNodes = allNodes;
       if (filter === "currStudents" || filter === "alumni") {
-        playcounts = allNodes.map(function(d) {
-          return d.playcount;
-        }).sort(d3.ascending);
-        cutoff = d3.quantile(playcounts, 0.5);
+        
         filteredNodes = allNodes.filter(function(n) {
           if (filter === "currStudents") {
-            return n.playcount > cutoff;
+            return n.status !== "alumni";
           } else if (filter === "alumni") {
-            return n.playcount <= cutoff;
+            return n.status !== "student";
           }
         });
       }
       return filteredNodes;
     };
+    filterStudentNodes = function(allNodes) {
+      var filteredNodes;
+      filteredNodes = allNodes;
+      filteredNodes = allNodes.filter(function(n) {
+        if (filter === "currStudents"){
+          return n.QERMStudent && n.status === "student";
+        } else if (filter === "alumni"){
+          return n.QERMStudent && n.status === "alumni";
+        } else {
+          return n.QERMStudent;
+        }
+      });
+      return filteredNodes;
+    };
+    filterUnconnectedNodes = function(curNodesData, curLinksData) {
+      var filteredNodes = [];
+      for (var ni = 0; ni < curNodesData.length; ni++){
+        var curnode = curNodesData[ni];
+        for (var linkIdx in curLinksData){
+          var link = curLinksData[linkIdx];
+          if (link.source.id === curnode.id || link.target.id === curnode.id){
+            filteredNodes.push(curnode);
+            break;
+          }
+        }
+      };
+      return filteredNodes;
+    }
     sortedArtists = function(nodes, links) {
       var artists, counts;
       artists = [];
@@ -396,7 +427,11 @@
       var content;
       content = '<p class="main">' + d.name + '</span></p>';
       content += '<hr class="tooltip-hr">';
-      content += '<p class="main">' + d.artist + '</span></p>';
+     if (d.QERMStudent === false){
+       content += '<p class="main">' + d.artist + '</span></p>';
+     } else{
+        content += '<p class="main">' + d.artist.substring(2) + '</span></p>';
+     }
       tooltip.showTooltip(content, d3.event);
       if (link) {
         link.attr("stroke", function(l) {

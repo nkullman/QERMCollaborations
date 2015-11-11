@@ -4,7 +4,7 @@
 
       "QERMStudent": true,
       "name": "Cole",
-      "artist": "SAFS",
+      "artist": "Q-SAFS",
       "id": "cole_qerm_node",
       "playcount": 678276
     },
@@ -12,7 +12,7 @@
 
       "QERMStudent": true,
       "name": "Austin",
-      "artist": "SEFS",
+      "artist": "Q-SEFS",
       "id": "austin_qerm_node",
       "playcount": 829602
     },
@@ -20,7 +20,7 @@
 
       "QERMStudent": true,
       "name": "Nick",
-      "artist": "SEFS",
+      "artist": "Q-SEFS",
       "id": "nick_qerm_node",
       "playcount": 1764606
     },
