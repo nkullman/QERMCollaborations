@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-
+      "status": "student",
       "QERMStudent": true,
       "name": "Cole",
       "artist": "Q-SAFS",
@@ -9,7 +9,7 @@
       "playcount": 678276
     },
     {
-
+      "status": "student",
       "QERMStudent": true,
       "name": "Austin",
       "artist": "Q-SEFS",
@@ -17,7 +17,7 @@
       "playcount": 829602
     },
     {
-
+      "status": "student",
       "QERMStudent": true,
       "name": "Nick",
       "artist": "Q-SEFS",
@@ -25,7 +25,7 @@
       "playcount": 1764606
     },
     {
-
+      "status": "NA",
       "QERMStudent": false,
       "name": "Terrestrial",
       "artist": "Ecosystem1",
@@ -33,7 +33,7 @@
       "playcount": 1630451
     },
     {
-
+      "status": "NA",
       "QERMStudent": false,
       "name": "Aquatic",
       "artist": "Ecosystem2",
