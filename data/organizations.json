@@ -1,61 +1,7 @@
 {
   "nodes": [
-    {
-      "QERMStudent": true,
-      "name": "Cole",
-      "artist": "Q-SAFS",
-      "id": "cole_qerm_node",
-	"status": "student",
-	"playcount": 678276
-    },
-    {
-      "QERMStudent": true,
-      "name": "Melissa",
-      "artist": "Q-SAFS",
-      "id": "melissa_qerm_node",
-	"status": "alumni",
-	"playcount": 678276
-    },
-    {
-      "QERMStudent": true,
-      "name": "Kelsey",
-      "artist": "Q-SAFS",
-      "id": "kelsey_qerm_node",
-	"status": "alumni",
-	"playcount": 678276
-    },
-    {
-      "QERMStudent": true,
-      "name": "Scott",
-      "artist": "Q-SEFS",
-      "id": "scott_qerm_node",
-	"status": "student",
-	"playcount": 678276
-    },
-    {
-      "QERMStudent": true,
-      "name": "Kiva",
-      "artist": "Q-SAFS",
-      "id": "kiva_qerm_node",
-	"status": "student",
-	"playcount": 678276
-    },
-    {
-      "QERMStudent": true,
-      "name": "Austin",
-      "artist": "Q-SEFS",
-      "id": "austin_qerm_node",
-	"status": "student",
-	"playcount": 829602
-    },
-    {
-      "QERMStudent": true,
-      "name": "Nick",
-      "artist": "Q-SEFS",
-      "id": "nick_qerm_node",
-	"status": "student",
-	"playcount": 1764606
-    },
+  !!! paste student nodes here from data/qermies.json !!!
+
     {
       "QERMStudent": false,
       "name": "National Oceanagraphic and Atmospheric Administration",
