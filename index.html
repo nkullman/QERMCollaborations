@@ -14,15 +14,14 @@
 
   <!-- CSS concatenated and minified via ant build script-->
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <!-- end CSS-->
   
   <!-- Load external libraries -->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>-->
-  <script src="js/libs/d3.v2.min.js" charset="utf-8"></script>
-  <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
-  <script src="js/libs/jquery-1.7.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
   <!-- Google Analytics tracking code -->
   <script>
@@ -36,13 +35,52 @@
   
 </head>
 <body>
-
   <div id="container" class="container">
     <header>
-    <h1>QERM collaborations and academic diversity</h1>
-    <p>Students' work spans ecological disciplines, quantitative methods, and organizational boundaries.</p>
+    <h1>QERM Visualized</h1>
+    <!-- Tabbed pane for tool info -->
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li><a data-toggle="tab" href="#whatisqerm">What is QERM?</a></li>
+      <li><a data-toggle="tab" href="#aboutthistool">What am I looking at?</a></li>
+    </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3></h3>
+      <p>QERM students' work spans ecological systems, quantitative methods, and organizational boundaries.</p>
+      <p>Use the controls below to learn more about where we work, how we work, and who we work with.</p>
+    </div>
+    <div id="whatisqerm" class="tab-pane fade">
+      <h3>What is QERM?</h3>
+      <p>Quantitative Ecology & Resource Management (QERM) is a unique interdisciplinary
+      graduate program designed for students interested in applying
+      quantitative tools to ecological and resource management issues. Students
+      receive intensive training in the application of statistical, mathematical, and
+      decision sciences to terrestrial and aquatic ecology, natural resource management,
+      biometrics, and mathematical biology.</p>
+      <p><a href="http://depts.washington.edu/qerm/">Learn more about QERM</a> | <a href="http://wiki.cbr.washington.edu/qerm/index.php/Main_Page">Check out our QERMipedia</a></p>
+    </div>
+    <div id="aboutthistool" class="tab-pane fade">
+      <h3>About this tool</h3>
+      <p>
+        QERM is proud to be an interdisciplinary program.
+        This tool began with the desire to see just how interdisciplinary we really are, as measured by our ecological interests, quantitative methods, and groups with which we collaborate.
+      </p>
+      <p> 
+        You can choose which of these measures of interdisciplinaryness to view using the dropdown menu below.
+        QERM students are clustered by the department of their primary advisor.
+        You can also select the layout of the grouping and also choose whether to see just current students, alumni, or both.
+      </p>
+      <p>
+        The tool was built with JavaScript and D3, and draws from <a href="http://flowingdata.com/2012/08/02/how-to-make-an-interactive-network-visualization/">this tutorial</a> by Jim Vallandingham.
+      </p>
+      <a href="https://github.com/nkullman/QERMCollaborations">View the source code here</a>
+    </div>
+  </div>
     </header>
 
+    <div id="controls">
       <div id="view_selection" class="control">
         <h3>Network view</h3>
         <select id="view_select">
@@ -50,13 +88,11 @@
           <option value="ecosystems.json">Ecological systems</option>
           <option value="quantMethods.json">Quantitative methods</option>
         </select>
-
       </div>
-    <div id="controls">
       <div id="layouts" class="control">
         <h3>Layout</h3>
-        <a id="force">Force Directed</a>
         <a id="radial" class="active">Clustered</a>
+        <a id="force">Force Directed</a>
       </div>
       <div id="filters" class="control">
         <h3>Filter on QERMies</h3>
@@ -64,14 +100,10 @@
         <a id="currStudents">Current students</a>
         <a id="alumni">Alumni</a>
       </div>
-      <div id="sorts" class="control">
-        <h3>Sort</h3>
-        <a id="songs" class="active">Songs</a>
-        <a id="links">Links</a>
-      </div>
       <div id="search_section" class="control">
+        <h3>Search</h3>
         <form id="search_form" action=""  method="post">
-          <p class="search_title">Search <input type="text" class="text-input" id="search" value="" /></p>
+          <input type="text" class="text-input" id="search" value="" />
         </form>
       </div>
     <div id="main" role="main">
