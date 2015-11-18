@@ -3,132 +3,131 @@
     "name": "Rachel",
     "artist": "SEFS",
     "id": "rachel_krieg",
-    "status": "alumni",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Gregor",
     "artist": "SAFS",
     "id": "gregor_passolt",
-    "status": "alumni",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Mandi",
     "artist": "SEFS",
     "id": "mandi_fix",
-    "status": "alumni",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Cole",
     "artist": "SAFS",
     "id": "cole_monnahan",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Jeff",
     "artist": "SAFS",
     "id": "jeff_rutter",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Ian F",
     "artist": "SAFS",
     "id": "ian_fraser",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Melissa",
     "artist": "SAFS",
     "id": "melissa_muradian",
-    "status": "alumni",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Kelsey",
     "artist": "SAFS",
     "id": "kelsey_vitense",
-    "status": "alumni",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Scott",
     "artist": "SEFS",
     "id": "scott_rinnan",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Kiva",
     "artist": "SAFS",
     "id": "kiva_oken",
-    "status": "student",
+    "status": "student"
 },  {
     "QERMStudent": true,
     "name": "Aneesh",
     "artist": "SAFS",
     "id": "aneesh_hariharan",
-    "status": "student",
+    "status": "student"
 },  {
     "QERMStudent": true,
     "name": "Christine",
     "artist": "SAFS",
     "id": "christine_stawitz",
-    "status": "student",
+    "status": "student"
 }, { 
     "QERMStudent": true,
     "name": "Adam",
     "artist": "SAFS",
-    "id": "adam_pope,
-    "status": "alumni",
+    "id": "adam_pope",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Austin",
     "artist": "AMATH",
     "id": "austin_phillips",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Jim",
     "artist": "STATS",
     "id": "jim_faulkner",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Kai",
     "artist": "SEFS",
     "id": "kai_ross",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Brooke",
     "artist": "SAFS",
     "id": "brooke_davis",
-    "status": "alumni",
+    "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Nick",
     "artist": "SEFS",
     "id": "nick_kullman",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Harry",
     "artist": "STATS",
     "id": "harry_podschwidt",
-    "status": "student",
+    "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Will",
     "artist": "SAFS",
     "id": "will_chen",
-    "status": "student",	
-	}
+    "status": "student"	
 }, {
     "QERMStudent": true,
     "name": "Lee",
     "artist": "SAFS",
     "id": "lee_cronin",
-    "status": "student",
+    "status": "student"
 },  {
     "QERMStudent": true,
     "name": "Elliot",
     "artist": "SAFS",
     "id": "elliot_koontz",
-    "status": "student",
-}
+    "status": "student"
+},
