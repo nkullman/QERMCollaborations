@@ -6,7 +6,7 @@ for the visualization.
 There are three files containing data, each one pertaining to a different
 "view" in the visualization as accessed by the dropdown menu. Each of these
 files is used independently in the code, which forces redundancy in the
-student information in the data files.
+student information (nodes) in the data files.
 
 Each file contains three components: (1) a list of nodes for students, (2)
 a list of nodes specific to the file (e.g., organization nodes in the
@@ -24,9 +24,11 @@ fields are used in stranges ways. This is because we derived the code from
 a visualization with a different purpose (artists and songs).
 
 Lastly, update the links which are simply the source and target "id"
-fields.
+fields. Test whether the file is valid by pasting it into an [online syntax
+checker](http://jsonlint.com/)
 
-Save and commit the changes and test to see if it worked.
+Save the changes and test the code to see if it worked. Then commit and
+push to the repo.
 
 All nodes in all files need to have the same fields. For example:
 
@@ -34,8 +36,8 @@ All nodes in all files need to have the same fields. For example:
 {
     "QERMStudent": true,     // true or false whether a student
     "name": "Cole",          // name in quotes
-    "artist": "Q-SAFS",      // basically department of student; used to group
-    "id": "cole_qerm_node",  // unique ID string for linking
-    "status": "student",     // "student", "alumni", or "NA" for non-student
+    "artist": "SAFS",        // basically department of student; used to group
+    "id": "cole_monnahan",   // unique ID string for linking
+    "status": "student"      // "student", "alumni", or "NA" for non-student
 }
 ````
