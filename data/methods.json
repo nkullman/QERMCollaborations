@@ -1,0 +1,314 @@
+{
+    "nodes": [
+        {
+            "QERMStudent": true,
+            "name": "Rachel",
+            "artist": "SEFS",
+            "id": "rachel_krieg",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Gregor",
+            "artist": "SAFS",
+            "id": "gregor_passolt",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Mandi",
+            "artist": "SEFS",
+            "id": "mandi_fix",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Cole",
+            "artist": "SAFS",
+            "id": "cole_monnahan",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Jeff",
+            "artist": "SAFS",
+            "id": "jeff_rutter",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Ian F",
+            "artist": "SAFS",
+            "id": "ian_fraser",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Melissa",
+            "artist": "SAFS",
+            "id": "melissa_muradian",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Kelsey",
+            "artist": "SAFS",
+            "id": "kelsey_vitense",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Scott",
+            "artist": "SEFS",
+            "id": "scott_rinnan",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Kiva",
+            "artist": "SAFS",
+            "id": "kiva_oken",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Aneesh",
+            "artist": "SAFS",
+            "id": "aneesh_hariharan",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Christine",
+            "artist": "SAFS",
+            "id": "christine_stawitz",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Adam",
+            "artist": "SAFS",
+            "id": "adam_pope",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Austin",
+            "artist": "AMATH",
+            "id": "austin_phillips",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Jim",
+            "artist": "STATS",
+            "id": "jim_faulkner",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Kai",
+            "artist": "SEFS",
+            "id": "kai_ross",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Brooke",
+            "artist": "SAFS",
+            "id": "brooke_davis",
+            "status": "alumni"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Nick",
+            "artist": "SEFS",
+            "id": "nick_kullman",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Harry",
+            "artist": "STATS",
+            "id": "harry_podschwidt",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Will",
+            "artist": "SAFS",
+            "id": "will_chen",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Lee",
+            "artist": "SAFS",
+            "id": "lee_cronin",
+            "status": "student"
+        },
+        {
+            "QERMStudent": true,
+            "name": "Elliot",
+            "artist": "SAFS",
+            "id": "elliot_koontz",
+            "status": "student"
+        },
+        {
+            "QERMStudent": false,
+            "name": "Population Dynamics",
+            "artist": "popdy",
+            "id": "popdy",
+            "status": "NA"
+        },
+        {
+            "QERMStudent": false,
+            "name": "Simulation",
+            "artist": "simulation",
+            "id": "simulation",
+            "status": "NA"
+        },
+        {
+            "QERMStudent": false,
+            "name": "Data Analysis",
+            "artist": "analysis",
+            "id": "analysis",
+            "status": "NA"
+        },
+        {
+            "QERMStudent": false,
+            "name": "Optimization",
+            "artist": "optim",
+            "id": "optim",
+            "status": "NA"
+        },
+        {
+            "QERMStudent": false,
+            "name": "Software Development",
+            "artist": "software",
+            "id": "software",
+            "status": "NA"
+        },
+        {
+            "QERMStudent": false,
+            "name": "Method Development",
+            "artist": "method",
+            "id": "method",
+            "status": "NA"
+        }
+    ],
+    "links": [
+        {
+            "source": "gregor_passolt",
+            "target": "analysis"
+        },
+        {
+            "source": "rachel_krieg",
+            "target": "optim"
+        },
+        {
+            "source": "mandi_fix",
+            "target": "analysis"
+        },
+        {
+            "source": "jeff_rutter",
+            "target": "method"
+        },
+        {
+            "source": "jeff_rutter",
+            "target": "analysis"
+        },
+        {
+            "source": "cole_monnahan",
+            "target": "software"
+        },
+        {
+            "source": "cole_monnahan",
+            "target": "simulation"
+        },
+        {
+            "source": "cole_monnahan",
+            "target": "analysis"
+        },
+        {
+            "source": "kiva_oken",
+            "target": "popdy"
+        },
+        {
+            "source": "kiva_oken",
+            "target": "simulation"
+        },
+        {
+            "source": "kelsey_vitense",
+            "target": "popdy"
+        },
+        {
+            "source": "aneesh_hariharan",
+            "target": "optim"
+        },
+        {
+            "source": "scott_rinnan",
+            "target": "analysis"
+        },
+        {
+            "source": "melissa_muradian",
+            "target": "popdy"
+        },
+        {
+            "source": "adam_pope",
+            "target": "software"
+        },
+        {
+            "source": "christine_stawitz",
+            "target": "popdy"
+        },
+        {
+            "source": "christine_stawitz",
+            "target": "analysis"
+        },
+        {
+            "source": "austin_phillips",
+            "target": "popdy"
+        },
+        {
+            "source": "austin_phillips",
+            "target": "simulation"
+        },
+        {
+            "source": "jim_faulkner",
+            "target": "method"
+        },
+        {
+            "source": "kai_ross",
+            "target": "optim"
+        },
+        {
+            "source": "kai_ross",
+            "target": "software"
+        },
+        {
+            "source": "nick_kullman",
+            "target": "software"
+        },
+        {
+            "source": "nick_kullman",
+            "target": "optim"
+        },
+        {
+            "source": "harry_podschwidt",
+            "target": "analysis"
+        },
+        {
+            "source": "will_chen",
+            "target": "optim"
+        },
+        {
+            "source": "lee_cronin",
+            "target": "popdy"
+        },
+        {
+            "source": "elliot_koontz",
+            "target": "analysis"
+        }
+    ]
+}
