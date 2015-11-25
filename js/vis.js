@@ -43,13 +43,15 @@
       return value;
     };
     setKeys = function(keys) {
+      var justKeys = Object.keys(keys);
       var firstCircleCount, firstCircleKeys, secondCircleKeys;
       values = d3.map();
       radius = 40;
       firstCircleKeys = [];
-      for (var key in keys) {
-        if (keys[key].startsWith("Q-")){
-          firstCircleKeys.push(keys[key]);
+      for (var keyIdx in justKeys) {
+        var actualKey = justKeys[keyIdx];
+        if (keys[actualKey]){
+          firstCircleKeys.push(actualKey);
         }
       }
       increment = 360/firstCircleKeys.length
@@ -57,7 +59,9 @@
         return place(k);
       });
       firstCircleCount = firstCircleKeys.length;
-      secondCircleKeys = keys.slice(firstCircleCount);
+      secondCircleKeys = justKeys.filter(function(d){
+        return firstCircleKeys.indexOf(d) < 0;
+      });
       radius = 300;
       increment = 360 / secondCircleKeys.length;
       return secondCircleKeys.forEach(function(k) {
@@ -104,9 +108,9 @@
   };
 
   Network = function() {
-    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedArtists, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
-    width = 720;
-    height = 600;
+    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedGroups, sortedGroupsWStudentStatus, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
+    width = 600;
+    height = 500;
     allData = [];
     curLinksData = [];
     curNodesData = [];
@@ -137,14 +141,15 @@
       return update();
     };
     update = function() {
-      var artists;
+      var groups;
       curNodesData = filterNodes(allData.nodes);
       curLinksData = filterLinks(allData.links, curNodesData);
       // remove residual organization nodes not attached to any students
       curNodesData = filterUnconnectedNodes(curNodesData, curLinksData);
       if (layout === "radial") {
-        artists = sortedArtists(curNodesData, curLinksData);
-        updateCenters(artists);
+        //groups = sortedGroups(curNodesData, curLinksData);
+        groups = sortedGroupsWStudentStatus(curNodesData);
+        updateCenters(groups);
       }
       force.nodes(curNodesData);
       updateNodes();
@@ -188,7 +193,7 @@
         } else {
           d.searched = false;
           return element.style("fill", function(d) {
-            return nodeColors(d.artist);
+            return nodeColors(d.group);
           }).style("stroke-width", 1.0).attr("r", 3);
         }
       });
@@ -284,49 +289,59 @@
       };
       return filteredNodes;
     }
-    sortedArtists = function(nodes, links) {
-      var artists, counts;
-      artists = [];
+    sortedGroups = function(nodes, links) {
+      var groups, counts;
+      groups = [];
+      /* We removed sort by links, below always lands on 'else'*/
       if (sort === "links") {
         counts = {};
         links.forEach(function(l) {
           var name, name1;
-          if (counts[name = l.source.artist] == null) {
+          if (counts[name = l.source.group] == null) {
             counts[name] = 0;
           }
-          counts[l.source.artist] += 1;
-          if (counts[name1 = l.target.artist] == null) {
+          counts[l.source.group] += 1;
+          if (counts[name1 = l.target.group] == null) {
             counts[name1] = 0;
           }
-          return counts[l.target.artist] += 1;
+          return counts[l.target.group] += 1;
         });
         nodes.forEach(function(n) {
           var name;
-          return counts[name = n.artist] != null ? counts[name] : counts[name] = 0;
+          return counts[name = n.group] != null ? counts[name] : counts[name] = 0;
         });
-        artists = d3.entries(counts).sort(function(a, b) {
+        groups = d3.entries(counts).sort(function(a, b) {
           return b.value - a.value;
         });
-        artists = artists.map(function(v) {
+        groups = groups.map(function(v) {
           return v.key;
         });
       } else {
-        counts = nodeCounts(nodes, "artist");
-        artists = d3.entries(counts).sort(function(a, b) {
+        counts = nodeCounts(nodes, "group");
+        groups = d3.entries(counts).sort(function(a, b) {
           return b.value - a.value;
         });
-        artists = artists.map(function(v) {
+        groups = groups.map(function(v) {
           return v.key;
         });
       }
-      return artists;
+      return groups;
     };
-    updateCenters = function(artists) {
+    sortedGroupsWStudentStatus = function(nodes) {
+
+      var groupsWStudentStatus;
+      groupsWStudentStatus = {};
+      nodes.forEach(function(d){
+        groupsWStudentStatus[d.group] = d.QERMStudent;
+      })
+      return groupsWStudentStatus;
+    };
+    updateCenters = function(groups) {
       if (layout === "radial") {
         return groupCenters = RadialPlacement().center({
           "x": width / 2,
           "y": height / 2 - 100
-        }).radius(300).increment(18).keys(artists);
+        }).radius(300).increment(18).keys(groups);
       }
     };
     filterLinks = function(allLinks, curNodes) {
@@ -346,7 +361,7 @@
       }).attr("r", function(d) {
         return d.radius;
       }).style("fill", function(d) {
-        return nodeColors(d.artist);
+        return nodeColors(d.group);
       }).style("stroke", function(d) {
         return strokeFor(d);
       }).style("stroke-width", 1.0);
@@ -415,23 +430,19 @@
       k = alpha * 0.1;
       return function(d) {
         var centerNode;
-        centerNode = groupCenters(d.artist);
+        centerNode = groupCenters(d.group);
         d.x += (centerNode.x - d.x) * k;
         return d.y += (centerNode.y - d.y) * k;
       };
     };
     strokeFor = function(d) {
-      return d3.rgb(nodeColors(d.artist)).darker().toString();
+      return d3.rgb(nodeColors(d.group)).darker().toString();
     };
     showDetails = function(d, i) {
       var content;
       content = '<p class="main">' + d.name + '</span></p>';
       content += '<hr class="tooltip-hr">';
-     if (d.QERMStudent === false){
-       content += '<p class="main">' + d.artist + '</span></p>';
-     } else{
-        content += '<p class="main">' + d.artist.substring(2) + '</span></p>';
-     }
+      content += '<p class="main">' + d.group + '</span></p>';
       tooltip.showTooltip(content, d3.event);
       if (link) {
         link.attr("stroke", function(l) {
