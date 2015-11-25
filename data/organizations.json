@@ -3,133 +3,133 @@
 {
     "QERMStudent": true,
     "name": "Rachel",
-    "artist": "SEFS",
+    "group": "SEFS",
     "id": "rachel_krieg",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Gregor",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "gregor_passolt",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Mandi",
-    "artist": "SEFS",
+    "group": "SEFS",
     "id": "mandi_fix",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Cole",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "cole_monnahan",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Jeff",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "jeff_rutter",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Ian F",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "ian_fraser",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Melissa",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "melissa_muradian",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Kelsey",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "kelsey_vitense",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Scott",
-    "artist": "SEFS",
+    "group": "SEFS",
     "id": "scott_rinnan",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Kiva",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "kiva_oken",
     "status": "student"
 },  {
     "QERMStudent": true,
     "name": "Aneesh",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "aneesh_hariharan",
     "status": "student"
 },  {
     "QERMStudent": true,
     "name": "Christine",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "christine_stawitz",
     "status": "student"
 }, { 
     "QERMStudent": true,
     "name": "Adam",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "adam_pope",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Austin",
-    "artist": "AMATH",
+    "group": "AMATH",
     "id": "austin_phillips",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Jim",
-    "artist": "STATS",
+    "group": "STATS",
     "id": "jim_faulkner",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Kai",
-    "artist": "SEFS",
+    "group": "SEFS",
     "id": "kai_ross",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Brooke",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "brooke_davis",
     "status": "alumni"
 }, {
     "QERMStudent": true,
     "name": "Nick",
-    "artist": "SEFS",
+    "group": "SEFS",
     "id": "nick_kullman",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Harry",
-    "artist": "STATS",
+    "group": "STATS",
     "id": "harry_podschwidt",
     "status": "student"
 }, {
     "QERMStudent": true,
     "name": "Will",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "will_chen",
     "status": "student"	
 }, {
     "QERMStudent": true,
     "name": "Lee",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "lee_cronin",
     "status": "student"
 },  {
     "QERMStudent": true,
     "name": "Elliot",
-    "artist": "SAFS",
+    "group": "SAFS",
     "id": "elliot_koontz",
     "status": "student"
 },
@@ -137,63 +137,63 @@
    {
 	"QERMStudent": false,
     "name": "National Oceanagraphic and Atmospheric Administration",
-    "artist": "NOAA",
+    "group": "NOAA",
     "id": "noaa",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "US Forest Service",
-      "artist": "USFS",
+      "group": "USFS",
       "id": "usfs",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "US Department of Agriculture",
-      "artist": "USDA",
+      "group": "USDA",
       "id": "usda",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "Fred Hutchison Cancer Research Center",
-      "artist": "FHCRC",
+      "group": "FHCRC",
       "id": "fhcrc",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "International Pacific Halibut Commission",
-      "artist": "IPHC",
+      "group": "IPHC",
       "id": "iphc",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "Northwest Climiate Science Center",
-      "artist": "NWCSC",
+      "group": "NWCSC",
       "id": "nwcsc",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "Alaska Department of Fish and Game",
-      "artist": "ADFG",
+      "group": "ADFG",
       "id": "adfg",
 	"status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "Bonneville Power Administration",
-      "artist": "Bonneville",
+      "group": "Bonneville",
       "id": "bpa",
       "status": "NA"
     },
     {
       "QERMStudent": false,
       "name": "UW Applied Physics Lab",
-      "artist": "APL",
+      "group": "APL",
       "id": "uwapl",
 	"status": "NA"
     }

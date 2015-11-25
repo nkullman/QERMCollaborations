@@ -7,7 +7,7 @@
       "status": "NA",
       "QERMStudent": false,
       "name": "Terrestrial",
-      "artist": "Ecosystem1",
+      "group": "Ecosystem1",
       "id": "terrestrial_eco_node",
       "playcount": 1630451
     },
@@ -15,7 +15,7 @@
       "status": "NA",
       "QERMStudent": false,
       "name": "Aquatic",
-      "artist": "Ecosystem2",
+      "group": "Ecosystem2",
       "id": "aquatic_eco_node",
       "playcount": 480881
     }
