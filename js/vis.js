@@ -43,13 +43,15 @@
       return value;
     };
     setKeys = function(keys) {
+      var justKeys = Object.keys(keys);
       var firstCircleCount, firstCircleKeys, secondCircleKeys;
       values = d3.map();
       radius = 40;
       firstCircleKeys = [];
-      for (var key in keys) {
-        if (keys[key].startsWith("Q-")){
-          firstCircleKeys.push(keys[key]);
+      for (var keyIdx in justKeys) {
+        var actualKey = justKeys[keyIdx];
+        if (keys[actualKey]){
+          firstCircleKeys.push(actualKey);
         }
       }
       increment = 360/firstCircleKeys.length
@@ -57,7 +59,9 @@
         return place(k);
       });
       firstCircleCount = firstCircleKeys.length;
-      secondCircleKeys = keys.slice(firstCircleCount);
+      secondCircleKeys = justKeys.filter(function(d){
+        return firstCircleKeys.indexOf(d) < 0;
+      });
       radius = 300;
       increment = 360 / secondCircleKeys.length;
       return secondCircleKeys.forEach(function(k) {
@@ -104,7 +108,7 @@
   };
 
   Network = function() {
-    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedGroups, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
+    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedGroups, sortedGroupsWStudentStatus, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
     width = 600;
     height = 500;
     allData = [];
@@ -143,7 +147,8 @@
       // remove residual organization nodes not attached to any students
       curNodesData = filterUnconnectedNodes(curNodesData, curLinksData);
       if (layout === "radial") {
-        groups = sortedGroups(curNodesData, curLinksData);
+        //groups = sortedGroups(curNodesData, curLinksData);
+        groups = sortedGroupsWStudentStatus(curNodesData);
         updateCenters(groups);
       }
       force.nodes(curNodesData);
@@ -287,6 +292,7 @@
     sortedGroups = function(nodes, links) {
       var groups, counts;
       groups = [];
+      /* We removed sort by links, below always lands on 'else'*/
       if (sort === "links") {
         counts = {};
         links.forEach(function(l) {
@@ -320,6 +326,15 @@
         });
       }
       return groups;
+    };
+    sortedGroupsWStudentStatus = function(nodes) {
+
+      var groupsWStudentStatus;
+      groupsWStudentStatus = {};
+      nodes.forEach(function(d){
+        groupsWStudentStatus[d.group] = d.QERMStudent;
+      })
+      return groupsWStudentStatus;
     };
     updateCenters = function(groups) {
       if (layout === "radial") {
@@ -427,11 +442,7 @@
       var content;
       content = '<p class="main">' + d.name + '</span></p>';
       content += '<hr class="tooltip-hr">';
-     if (d.QERMStudent === false){
-       content += '<p class="main">' + d.group + '</span></p>';
-     } else{
-        content += '<p class="main">' + d.group.substring(2) + '</span></p>';
-     }
+      content += '<p class="main">' + d.group + '</span></p>';
       tooltip.showTooltip(content, d3.event);
       if (link) {
         link.attr("stroke", function(l) {
