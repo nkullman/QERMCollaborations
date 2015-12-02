@@ -178,7 +178,7 @@
  	},
 
  	{
- 	"source": "elliot_kuntz",
+ 	"source": "elliot_koontz",
  	"target": "terrestrial_eco_node"
  	},
 
@@ -239,75 +239,8 @@
  	"source": "adam_pope",
  	"target": "aquatic_mgmt_node"
  	}, {
- 	"source": "ian_frasier",
+ 	"source": "ian_fraser",
  	"target": "aquatic_mgmt_node"
- 	},
-
- 	{
- 	"source": "elliot_kuntz ",
- 	"target": "terrestrial_eco_node"
- 	},
-
- 	{
- 	"source": "kiva_oken ",
- 	"target": "terrestrial_eco_node"
- 	}, {
- 	"source": "kelsey_vitense ",
- 	"target": "terrestrial_eco_node"
- 	}, {
- 	"source": "mandi_fix ",
- 	"target": "terrestrial_eco_node"
- 	},
-
- 	{
- 	"source": "kai_ross ",
- 	"target": "terrestrial_mgmt_node"
- 	}, {
- 	"source": "nick_kullman ",
- 	"target": "terrestrial_mgmt_node"
- 	}, {
- 	"source": "harry_podschwidt ",
- 	"target": "terrestrial_mgmt_node"
- 	}, {
- 	"source": "rachel_krieg ",
- 	"target": "terrestrial_mgmt_node"
- 	}, {
- 	"source": "christine_stawitz ",
- 	"target": "aquatic_eco_node "
- 	}, {
- 	"source": "brooke_davis ",
- 	"target": "aquatic_eco_node "
- 	}, {
- 	"source": "jim_faulkner ",
- 	"target": "aquatic_eco_node "
- 	}, {
- 	"source": "jeff_rutter ",
- 	"target": "aquatic_eco_node "
- 	}, {
- 	"source": "gregor_passolt ",
- 	"target": "aquatic_eco_node "
- 	}, {
- 	"source": "cole_monnahan ",
- 	"target": "aquatic_mgmt_node "
- 	}, {
- 	"source": "melissa_muradian ",
- 	"target": "aquatic_mgmt_node "
- 	}, {
- 	"source": "will_chen ",
- 	"target": "aquatic_mgmt_node "
- 	}, {
- 	"source": "lee_cronin ",
- 	"target": "aquatic_mgmt_node "
- 	}, {
- 	"source": "aneesh_hariharan ",
- 	"target": "aquatic_mgmt_node "
- 	}, {
- 	"source": "adam_pope ",
- 	"target": "aquatic_mgmt_node "
- 	}, {
- 	"source": "ian_frasier ",
- 	"target": "aquatic_mgmt_node "
- 	}
- ]
+ 	} ]
 }
  
