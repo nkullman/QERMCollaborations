@@ -136,7 +136,7 @@
   
    {
 	"QERMStudent": false,
-    "name": "National Oceanagraphic and Atmospheric Administration",
+    "name": "National Oceanographic and Atmospheric Administration",
     "group": "NOAA",
     "id": "noaa",
 	"status": "NA"
@@ -196,6 +196,13 @@
       "group": "APL",
       "id": "uwapl",
 	"status": "NA"
+    },
+    {
+      "QERMStudent": false,
+      "name": "UW IGERT Program on Ocean Change",
+      "group": "IPOC",
+      "id": "uwipoc",
+        "status": "NA"
     }
 	],
   "links": [
@@ -302,6 +309,10 @@
     {
       "source": "elliot_koontz",
       "target": "usfs"
+    },
+    {
+      "source": "christine_stawitz",
+      "target": "uwipoc"
     }
   ]
 }

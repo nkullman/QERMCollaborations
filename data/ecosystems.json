@@ -241,6 +241,9 @@
  	}, {
  	"source": "ian_fraser",
  	"target": "aquatic_mgmt_node"
+ 	}, {
+ 	"source": "christine_stawitz",
+ 	"target": "aquatic_mgmt_node"
  	} ]
 }
  
