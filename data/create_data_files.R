@@ -6,19 +6,19 @@ library('jsonlite')
 ## of the JSON files, appended to the specific nodes for that file.
 student_nodes <- read.table("student_nodes.csv", header=TRUE, sep=",",
                             stringsAsFactors=FALSE)
-method_nodes <- read.table("method_nodes.csv", header=TRUE, sep=",",
-                            stringsAsFactors=FALSE)
-method_links <- read.table("method_links.csv", header=TRUE, sep=",",
-                            stringsAsFactors=FALSE)
-
-## Merge the nodes for each file, test for missing data, and then create
-## json and write to file.
-method_nodes2 <- rbind(student_nodes, method_nodes)
-which.missing.ids <-
-    which(!unique(unlist(method_links)) %in% unique(method_nodes2$id))
-if(length(which.missing.ids)>0)
-       stop(paste("Method IDs in links not in nodes:",
-     paste0(unique(unlist(method_links))[which.missing.ids], collapse=', ')))
-x <- c("{ \"nodes\":", toJSON(method_nodes2), ", \"links\":", toJSON(method_links), "}")
-write(x, 'methods.json')
-
+for(ii in c("methods", "organizations", "ecosystems")){
+    nodes <- read.table(paste0(ii, "_nodes.csv"), header=TRUE, sep=",",
+                        stringsAsFactors=FALSE)
+    links <- read.table(paste0(ii, "_links.csv"), header=TRUE, sep=",",
+                        stringsAsFactors=FALSE)
+    ## Merge the nodes for each file, test for missing data, and then
+    ## create json and write to file.
+    nodes2 <- rbind(student_nodes, nodes)
+    which.missing.ids <-
+        which(!unique(unlist(links)) %in% unique(nodes2$id))
+    if(length(which.missing.ids)>0)
+      stop(paste(ii,"IDs in links not in nodes:",
+        paste0(unique(unlist(links))[which.missing.ids], collapse=', ')))
+    x <- c("{ \"nodes\":", toJSON(nodes2), ", \"links\":", toJSON(links), "}")
+    write(x, file=paste0(ii, '.json'))
+}

@@ -1,0 +1,11 @@
+QERMStudent,name,group,id,status
+FALSE,National Oceanographic and Atmospheric Administration,NOAA,noaa,NA
+FALSE,US Forest Service,USFS,usfs,NA
+FALSE,US Department of Agriculture,USDA,usda,NA
+FALSE,Fred Hutchison Cancer Research Center,FHCRC,fhcrc,NA
+FALSE,International Pacific Halibut Commission,IPHC,iphc,NA
+FALSE,Northwest Climiate Science Center,NWCSC,nwcsc,NA
+FALSE,Alaska Department of Fish and Game,ADFG,adfg,NA
+FALSE,Bonneville Power Administration,Bonneville,bpa,NA
+FALSE,UW Applied Physics Lab,APL,uwapl,NA
+FALSE,UW IGERT Program on Ocean Change,IPOC,uwipoc,NA
