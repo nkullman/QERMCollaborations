@@ -386,12 +386,20 @@
         legendEntries[e.group] = nodeColors(e.group);
       });
       var svg = d3.select("#visSVG");
+      svg.append("text")
+        .attr("id","legendTitle")
+        .attr("x", width - circleRadius)
+        .attr("y",0)
+        .attr("dy","1em")
+        .attr("text-anchor","end")
+        .text("Advisor's Department");
+        
       d3.selectAll(".legend").remove();
       var legend = svg.selectAll(".legend")
-        .data(Object.keys(legendEntries))
+        .data(Object.keys(legendEntries).sort())
           .enter().append("g")
           .attr("class", "legend")
-          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+          .attr("transform", function(d, i) { return "translate(0," + (i+1) * 20 + ")"; });
 
       legend.append("circle")
           .attr("cx", width - 4*circleRadius)
@@ -401,7 +409,7 @@
     
       legend.append("text")
           .attr("x", width - 8*circleRadius)
-          .attr("y", 4*circleRadius)
+          .attr("y", 5*circleRadius)
           .style("text-anchor", "end")
           .text(function(d) { return d; });
       
