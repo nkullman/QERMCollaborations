@@ -211,7 +211,8 @@
         var randomnumber;
         n.x = randomnumber = Math.floor(Math.random() * width);
         n.y = randomnumber = Math.floor(Math.random() * height);
-        n.radius = circleRadius;
+        if (n.QERMStudent) {n.radius = 2*circleRadius;}
+        else {n.radius = circleRadius;}
         return;
       });
       nodesMap = mapNodes(data.nodes);
@@ -360,6 +361,9 @@
         return d.y;
       }).attr("r", function(d) {
         return d.radius;
+      }).style("opacity", function(d) {
+        if (d.QERMStudent) {return 1;}
+        else {return 0.5};
       }).style("fill", function(d) {
         return nodeColors(d.group);
       }).style("stroke", function(d) {
