@@ -108,7 +108,7 @@
   };
 
   Network = function() {
-    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedGroups, sortedGroupsWStudentStatus, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, width;
+    var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedGroups, sortedGroupsWStudentStatus, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, updateLegend, width;
     width = 600;
     height = 500;
     allData = [];
@@ -132,7 +132,7 @@
     network = function(selection, data) {
       var vis;
       allData = setupData(data);
-      vis = d3.select(selection).append("svg").attr("width", width).attr("height", height);
+      vis = d3.select(selection).append("svg").attr("id","visSVG").attr("width", width).attr("height", height);
       linksG = vis.append("g").attr("id", "links");
       nodesG = vis.append("g").attr("id", "nodes");
       force.size([width, height]);
@@ -163,6 +163,7 @@
           link = null;
         }
       }
+      updateLegend(curNodesData);
       return force.start();
     };
     network.toggleLayout = function(newLayout) {
@@ -378,6 +379,33 @@
       node.on("mouseover", showDetails).on("mouseout", hideDetails);
       return node.exit().remove();
     };
+    updateLegend = function(nodes) {
+      var studentNodes = nodes.filter(function(d){ return d.QERMStudent; })
+      var legendEntries = {};
+      studentNodes.forEach(function(e,i,arr){
+        legendEntries[e.group] = nodeColors(e.group);
+      });
+      var svg = d3.select("#visSVG");
+      d3.selectAll(".legend").remove();
+      var legend = svg.selectAll(".legend")
+        .data(Object.keys(legendEntries))
+          .enter().append("g")
+          .attr("class", "legend")
+          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+      legend.append("circle")
+          .attr("cx", width - 4*circleRadius)
+          .attr("cy", 4*circleRadius)
+          .attr("r", 2*circleRadius)
+          .attr("fill", nodeColors);
+    
+      legend.append("text")
+          .attr("x", width - 8*circleRadius)
+          .attr("y", 4*circleRadius)
+          .style("text-anchor", "end")
+          .text(function(d) { return d; });
+      
+    }
     updateLinks = function() {
       link = linksG.selectAll("line.link").data(curLinksData, function(d) {
         return d.source.id + "_" + d.target.id;
