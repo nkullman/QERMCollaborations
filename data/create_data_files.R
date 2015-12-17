@@ -6,7 +6,7 @@ library('jsonlite')
 ## of the JSON files, appended to the specific nodes for that file.
 student_nodes <- read.table("student_nodes.csv", header=TRUE, sep=",",
                             stringsAsFactors=FALSE)
-for(ii in c("methods", "organizations", "ecosystems")){
+for(ii in c("methods", "collaborations", "ecosystems")){
     nodes <- read.table(paste0(ii, "_nodes.csv"), header=TRUE, sep=",",
                         stringsAsFactors=FALSE)
     links <- read.table(paste0(ii, "_links.csv"), header=TRUE, sep=",",

@@ -9,9 +9,9 @@ files is used independently in the code, which forces redundancy in the
 student information (nodes) in the data files.
 
 Each file contains three components: (1) a list of nodes for students, (2)
-a list of nodes specific to the file (e.g., organization nodes in the
-organizations file), and (3) links between nodes within that file
-(i.e. students and organizations). The visualization uses javascript so we
+a list of nodes specific to the file (e.g., collaboration nodes in the
+collaborations file), and (3) links between nodes within that file
+(i.e. students and collaborations). The visualization uses javascript so we
 use .json files. For ease of updating/checking/etc. we house the data in
 .csv files and then use R to process those into the input files.
 

@@ -144,7 +144,7 @@
       var groups;
       curNodesData = filterNodes(allData.nodes);
       curLinksData = filterLinks(allData.links, curNodesData);
-      // remove residual organization nodes not attached to any students
+      // remove residual collaboration nodes not attached to any students
       curNodesData = filterUnconnectedNodes(curNodesData, curLinksData);
       if (layout === "radial") {
         //groups = sortedGroups(curNodesData, curLinksData);
@@ -580,7 +580,7 @@
       searchTerm = $(this).val();
       return myNetwork.updateSearch(searchTerm);
     });
-    return d3.json("data/organizations.json", function(json) {
+    return d3.json("data/collaborations.json", function(json) {
       return myNetwork("#vis", json);
     });
   });
