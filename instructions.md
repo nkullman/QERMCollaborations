@@ -11,21 +11,18 @@ student information (nodes) in the data files.
 Each file contains three components: (1) a list of nodes for students, (2)
 a list of nodes specific to the file (e.g., organization nodes in the
 organizations file), and (3) links between nodes within that file
-(i.e. students and organizations).
+(i.e. students and organizations). The visualization uses javascript so we
+use .json files. For ease of updating/checking/etc. we house the data in
+.csv files and then use R to process those into the input files.
 
-For now the `data/qermies.json` file contains a "master" list of student
-nodes. Whenever this changes you need to copy those changes to all three of
-the data files. Note: this file is not used by the code and is merely a
-holder for the data for ease of workflow.
+For now the `data/student_nodes.csv` file contains a "master" list of student
+nodes, and it is appended to the other nodes in the R script.
 
-After updating the students (if needed), update the other nodes, copying
-the format of previous ones. Due to the setup of the code some of the node
-fields are used in stranges ways. This is because we derived the code from
-a visualization with a different purpose (artists and songs).
-
-Lastly, update the links which are simply the source and target "id"
-fields. Test whether the file is valid by pasting it into an [online syntax
-checker](http://jsonlint.com/)
+Updating data is as simple as altering the csv files and then running the
+script (hopefully!). There is some error checking in the R file but it's
+currently very limited. It might be a good idea to test whether the file is
+valid by pasting it into an [online syntax checker](http://jsonlint.com/)
+before trying to load the HTML.
 
 Save the changes and test the code to see if it worked. Then commit and
 push to the repo.
@@ -36,7 +33,7 @@ All nodes in all files need to have the same fields. For example:
 {
     "QERMStudent": true,     // true or false whether a student
     "name": "Cole",          // name in quotes
-    "artist": "SAFS",        // basically department of student; used to group
+    "group": "SAFS",        // basically department; used to group
     "id": "cole_monnahan",   // unique ID string for linking
     "status": "student"      // "student", "alumni", or "NA" for non-student
 }
