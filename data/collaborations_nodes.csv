@@ -1,0 +1,31 @@
+QERMStudent,name,group,id,status
+FALSE,National Marine Fisheries Service (NOAA),NOAA-NMFS,nmfs,NA
+FALSE,National Marine Mammal Laboratory (NOAA),NOAA-NMML,nmml,NA
+FALSE,US Forest Service,USFS,usfs,NA
+FALSE,US Department of Agriculture,USDA,usda,NA
+FALSE,Fred Hutchison Cancer Research Center,FHCRC,fhcrc,NA
+FALSE,International Pacific Halibut Commission,IPHC,iphc,NA
+FALSE,Northwest Climiate Science Center,NWCSC,nwcsc,NA
+FALSE,Alaska Department of Fish and Game,ADFG,adfg,NA
+FALSE,Bonneville Power Administration,Bonneville,bpa,NA
+FALSE,UW Applied Physics Lab,APL,uwapl,NA
+FALSE,UW IGERT Program on Ocean Change,IPOC,uwipoc,NA
+FALSE,Simon Fraser University,SFU,sfu,NA
+FALSE,Swedish University of Agricultural Sciences (SLU),SLU,slu,NA
+FALSE,The Nature Conservancy,TNC,tnc,NA
+FALSE,National Science Foundation,NSF,nsf,NA
+FALSE,Fisheries & Oceans Canada,DFO,dfo,NA
+FALSE,Institute of Marine Research in Norway,IMR,imr,NA
+FALSE,Alaska Salmon Program,ASP,asp,NA
+FALSE,Natural Capital Project,NATCAP,natcap,NA
+FALSE,The Natural Sciences and Engineering Research Council of Canada,NSERC,nserc,NA
+FALSE,University of Florida,UF,uf,NA
+FALSE,School of Aquatic and Fishery Sciences,SAFS,safs,NA
+FALSE,Center for Studies in Demography and Ecology,CSDE,csde,NA
+FALSE,Center for Statistics in the Social Sciences,CSSS,csss,NA
+FALSE,School of Environmental and Forest Sciences,SEFS,sefs,NA
+FALSE,US Department of Defense,DOD,dod,NA
+FALSE,Center for Quantitative Science (CQS),CQS,cqs,NA
+FALSE,Washington State Department of Natural Resources,WADNR,wadnr,NA
+FALSE,The Precision Forestry Cooperative,PFC,pfc,NA
+FALSE,U.S. Army Engineer Research and Development Center,ERDC,erdc,NA

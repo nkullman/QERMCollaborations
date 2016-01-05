@@ -1,5 +1,7 @@
-QERMStudent,status,name,group,id
-FALSE,NA,Terrestrial Ecology,Terrestrial Ecology,terrestrial_eco_node
-FALSE,NA,Aquatic Ecology,Aquatic Ecology,aquatic_eco_node
-FALSE,NA,Terrestrial Resource Management,Terrestrial Resource Management,terrestrial_mgmt_node
-FALSE,NA,Aquatic Resource Management,Aquatic Resource Management,aquatic_mgmt_node
+QERMStudent,name,group,id,status
+FALSE,Freshwater,Freshwater,freshwater,NA
+FALSE,Human,Human,human,NA
+FALSE,Urban,Urban,urban,NA
+FALSE,Forestry,Forestry,forestry,NA
+FALSE,Wildlife,Wildlife,wildlife,NA
+FALSE,Marine,Marine,marine,NA
