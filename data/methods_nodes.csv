@@ -1,7 +1,7 @@
 QERMStudent,name,group,id,status
-FALSE,Population Dynamics,popdy,popdy,NA
-FALSE,Simulation,simulation,simulation,NA
-FALSE,Data Analysis,analysis,analysis,NA
-FALSE,Optimization,optim,optim,NA
-FALSE,Software Development,software,software,NA
-FALSE,Method Development,method,method,NA
+FALSE,Population Dynamics,Population Dynamics,popdy,NA
+FALSE,Simulation,Simulation,simulation,NA
+FALSE,Data Analysis,Data Analysis,analysis,NA
+FALSE,Optimization,Optimization,optim,NA
+FALSE,Software Development,Software Development,software,NA
+FALSE,Method Development,Method Development,method,NA
