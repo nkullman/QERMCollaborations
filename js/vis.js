@@ -110,7 +110,7 @@
   Network = function() {
     var allData, charge, curLinksData, curNodesData, filter, filterLinks, filterNodes, filterUnconnectedNodes, filterStudentNodes, force, forceTick, groupCenters, height, hideDetails, layout, link, linkedByIndex, linksG, mapNodes, moveToRadialLayout, neighboring, network, node, nodeColors, nodeCounts, nodesG, radialTick, setFilter, setLayout, setSort, setupData, showDetails, sort, sortedGroups, sortedGroupsWStudentStatus, strokeFor, tooltip, update, updateCenters, updateLinks, updateNodes, updateLegend, width;
     width = 600;
-    height = 500;
+    height = 800;
     allData = [];
     curLinksData = [];
     curNodesData = [];
