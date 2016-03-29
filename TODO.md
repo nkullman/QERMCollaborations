@@ -1,20 +1,24 @@
 ## Short-term TODO
- - [ ] Change classifications in "Ecosystems" datafile to identify QERMies strictly by ecosystems. Suggest to remove distinction between ecology and resource management and instead provide greater resolution on ecosystem with groups such as
+ 
+ 
+## Long-term TODO
+- [ ] Add floating labels on diagram for non-student nodes
+- [ ] Add option to see where QERMies go after graduation
+- [ ] Clicking a node filters to just them and their connections. Clicking same node again unfilters.
+- [ ] Tooltip contains image, blurb, link
+- [ ] Add faculty view (see #19)
+- [ ] Rename repo and add users (see #20)
+
+
+## Done
+ - [x] Change classifications in "Ecosystems" datafile to identify QERMies strictly by ecosystems. Suggest to remove distinction between ecology and resource management and instead provide greater resolution on ecosystem with groups such as
   - 	marine
   - 	freshwater
   - 	epidemiology/global health/human ecology
   - 	urban ecology
   - 	forestry
   - 	wildlife ecology
- 
- 
-## Long-term TODO
-- [ ] Add floating labels on diagram for non-student nodes
-- [ ] Poll current students, alumni and update data 
-- [ ] Add option to see where QERMies go after graduation
-
-
-## Done
+- [x] Poll current students, alumni and update data
 - [x] When filtering on current/alumni, eliminate nodes/links unconnected to the filtered nodes
 - [x] Add "status" field to quant methods and ecosystems datafile
 - [x] Remove playcount field from all datafiles
