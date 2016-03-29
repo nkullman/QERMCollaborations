@@ -6,12 +6,12 @@
 - [ ] Add option to see where QERMies go after graduation
 - [ ] Clicking a node filters to just them and their connections. Clicking same node again unfilters.
 - [ ] Tooltip contains image, blurb, link
-- [ ] Add faculty view (see #19)
-- [ ] Rename repo and add users (see #20)
+- [ ] Add faculty view (see [#19](https://github.com/nkullman/QERMCollaborations/issues/19))
+- [ ] Rename repo and add users (see [#20](https://github.com/nkullman/QERMCollaborations/issues/20))
 
 
 ## Done
- - [x] Change classifications in "Ecosystems" datafile to identify QERMies strictly by ecosystems. Suggest to remove distinction between ecology and resource management and instead provide greater resolution on ecosystem with groups such as
+- [x] Change classifications in "Ecosystems" datafile to identify QERMies strictly by ecosystems. Suggest to remove distinction between ecology and resource management and instead provide greater resolution on ecosystem with groups such as
   - 	marine
   - 	freshwater
   - 	epidemiology/global health/human ecology
