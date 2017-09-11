@@ -1,5 +1,7 @@
 ## This script takes the .csv data files and creates the .JSON files that
 ## the visualization uses.
+wkdir <- "C:/Users/Robbie/Desktop/wolverines/QERMCollaborations/data"
+setwd(wkdir)
 library('jsonlite')
 
 ## Assuming your WD is the data folder! The student nodes are used in each
